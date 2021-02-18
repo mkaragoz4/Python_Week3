@@ -1,21 +1,14 @@
-'''
-Developer: Furkan Sürücü
-Purpose of Software: Reinforcement of learned python code and self-improvement
-What does program do?: Taking different words with hypen(-) in between them
-and sorts the words in alphabetical order, adds hyphen icon (-) between them,
-gives the output of the sorted words.
-'''
-
-
-def alphabetical_order():
-    words = input("Enter different words with hypen (-) in between them:\n").split("-")
-    sorted_words = sorted(words)
-
-    for i in sorted_words:
-        if i != sorted_words[-1]:
-            print(i, end='-')
+def sort_words(y):
+    x=y.lower()
+    word_list=x.split("-")
+    word_list.sort()
+    str=""
+    for i in range(len(word_list)):
+        if i==0:
+            str += word_list[i]
         else:
-            print(i)
+            str+=("-"+word_list[i])
+    return str
 
-
-alphabetical_order()
+txt=input("Please enter the text with hypent(-):\n")
+print(sort_words(txt))

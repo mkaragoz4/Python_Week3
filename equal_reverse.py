@@ -1,17 +1,13 @@
-'''
-Developer: Furkan Sürücü
-Purpose of Software: Reinforcement of learned python code and self-improvement
-What does program do?: Check the given inputs whether
-they are equal to their reversed order or not.
-'''
-
-def equal_reverse(word):
-    if word == word[::-1]:
+def equal_rev(x):
+    count=0
+    mid=(len(x)//2)
+    for i in range(mid):
+        if x[i]==x[-(i+1)]:
+            count+=1
+    if mid==count:
         return True
     else:
         return False
 
-print(equal_reverse("madam"))
-print(equal_reverse("tacocat"))
-print(equal_reverse("utrecht"))
-print(equal_reverse("marlboro"))
+txt=input("Please enter the text to check the symmetry:\n")
+print(equal_rev(txt))

@@ -1,12 +1,11 @@
-'''
-Developer: Furkan Sürücü
-Purpose of Software: Reinforcement of learned Python Code and Self-improvement
-What does program do?: Filtering all the unique(unrepeated) elements of a given list.
-'''
+def unique_list(x):
+    y=set(x)
+    unic_lst=list(y)
+    unic_lst.sort()
+    return unic_lst
 
-def unique_list (l):
-    l = set(l)
-    return print(list(l))
-unique_list([1,2,3,3,3,3,4,5,5])
+raw_list=[1,2,3,3,3,3,3,4,7,8,5,4,9,11,21,34,12]
 
+print("Repeted List",raw_list)
 
+print("Unrepeted List",unique_list(raw_list))

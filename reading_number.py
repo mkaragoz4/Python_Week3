@@ -1,29 +1,66 @@
-'''
-Developer: Furkan Sürücü
-Purpose of Software: Reinforcement of learned python code and self-improvement
-What does program do?: The transcription of an input number with two digits.
-'''
-num1_to_9 = {1: 'One', 2: 'Two', 3: 'Three', 4: 'Four', 5: 'Five', \
-            6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine'}
-num10_to_19 = {10: 'Ten', 11: 'Eleven', 12: 'Twelve', 13: 'Thirteen', 14: 'Fourteen', \
-            15: 'Fifteen', 16: 'Sixteen', 17: 'Seventeen', 18: 'Eighteen', 19: 'Nineteen'}
-num20_to_90 = ['Twenty','Thirty','Fourty','Fifty','Sixty','Seventy','Eighty','Ninety']
+def transcript(x):
 
-def reading_number(num):
-
-    if num == 0:
-        return "zero"
-    elif 1 <= num <= 9:
-        return num1_to_9[num]
-    elif 10 <= num <= 19:
-        return num10_to_19[num]
-    elif 20 <= num <= 99:
-        if num % 10 == 0:
-            return num20_to_90[(num//10)-2]
+    lst = [i for i in x]
+    if lst[0]=='1':
+        if lst[1]=='0':
+            return 'Ten'
+        elif lst[1]=='1':
+            return 'Eleven'
+        elif lst[1]=='2':
+            return 'Twelve'
+        elif lst[1]=='3':
+            return 'Thirteen'
+        elif lst[1]=='4':
+            return 'Fourteen'
+        elif lst[1]=='5':
+            return 'Fifteen'
+        elif lst[1]=='6':
+            return 'Sixteen'
+        elif lst[1]=='7':
+            return 'Seventeen'
+        elif lst[1]=='8':
+            return 'Eighteen'
         else:
-            x = num20_to_90[(num//10)-2] +" "+ num1_to_9[num%10]
-            return x
+            return 'Nineteen'
+    elif lst[0]=='2':
+        return 'Twenty '+number(lst[1])
+    elif lst[0]=='3':
+        return 'Thirty '+number(lst[1])
+    elif lst[0]=='4':
+        return 'Fourty '+number(lst[1])
+    elif lst[0]=='5':
+        return 'Fifty '+number(lst[1])
+    elif lst[0]=='6':
+        return 'Sixty '+number(lst[1])
+    elif lst[0]=='7':
+        return 'Seventy '+number(lst[1])
+    elif lst[0]=='8':
+        return 'Eighty '+number(lst[1])
     else:
-       return "Out of range"
-sayi = int(input("Enter a number:\n"))
-print(sayi,"------->",reading_number(sayi))
+        return 'Ninety '+number(lst[1])
+
+def number(y):
+
+    if y == '0':
+        return ''
+    elif y == '1':
+        return 'one'
+    elif y == '2':
+        return 'two'
+    elif y == '3':
+        return 'three'
+    elif y == '4':
+        return 'four'
+    elif y == '5':
+        return 'five'
+    elif y == '6':
+        return 'six'
+    elif y == '7':
+        return 'seven'
+    elif y == '8':
+        return 'eight'
+    else:
+        return 'nine'
+
+a=input('Please insert the two digit numbers:')
+print(a," -------------------> ",transcript(a))
